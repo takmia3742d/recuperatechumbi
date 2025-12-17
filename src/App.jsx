@@ -1,13 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import RootLayout from './layouts/RootLayout'
+import Home from './pages/Home'
+import Entities from './pages/Entities'
+import Contact from './pages/Contact'
 
 function App() {
-  
   return (
-    <>
-      recuperate chumbi 
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+      <Route path="/" element={<Home />} />
+        <Route path="/entities" element={<Entities />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
